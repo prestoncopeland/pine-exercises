@@ -18,5 +18,3 @@ puts "What's your favorite number?"
 favoriteNumber = gets.chomp
 biggerNumber = favoriteNumber.to_i + 1
 puts "Perhaps you would prefer #{biggerNumber}?"
-
-#Now I want to commit this change, yes
