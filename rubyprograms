@@ -89,7 +89,7 @@ puts words.sort
 
 
 #table of contents, revisited
-#I copied Pine's answer, typing it in, to learn 
+#I copied Pine's answer, typing it in, to learn
 #from it
 title = "Table of Contents"
 chapters = [["Getting Started", 1],
@@ -217,7 +217,7 @@ puts words.sort
 
 end
 
-#9.5 
+#9.5
 #ask question
 #June 28, 2013
 
@@ -236,7 +236,7 @@ def ask question
 	end
 end
 
-#9.5 
+#9.5
 #Old school Roman numerals
 #June 28, 2013
 def oldRoman year
@@ -246,7 +246,7 @@ def oldRoman year
 
 	yearArray = Array.new
 	counter = 0
-		
+
 	while(counter<7)
 		part = year/numbers[counter]
 		yearArray << part
@@ -292,7 +292,7 @@ def newRoman year
 						else
 							"V"*(year%10/5) + "I"*(year%5)
 						end
-	new_roman_year 
+	new_roman_year
 
 end
 
@@ -301,7 +301,7 @@ end
 #nonrecursive
 #June 28, 2013
 	def sortArrayNew array
-		
+
 		for i in 0...array.length
 			for j in i+1...array.length
 				if(array[j]<array[i])
@@ -317,10 +317,10 @@ end
 #June 29, 2013
 #10.2 Sorting
 #recursive
-def sort some_array # This "wraps" recursive_sort. 
+def sort some_array # This "wraps" recursive_sort.
 	recursive_sort some_array, []
 end
-def recursive_sort unsorted_array, sorted_array 
+def recursive_sort unsorted_array, sorted_array
 	if(unsorted_array.length==0)
 		sorted_array
 	else
@@ -333,7 +333,7 @@ def recursive_sort unsorted_array, sorted_array
 			counter +=1
 		end
 
-		sorted_array << min 
+		sorted_array << min
 		unsorted_array.delete(min)
 		recursive_sort(unsorted_array, sorted_array)
 	end
@@ -373,7 +373,7 @@ def english_number number
 	end
 
 	if number == 0
-		return 'zero' 
+		return 'zero'
 	end
 
 	# No more special cases! No more returns!
@@ -419,12 +419,12 @@ def english_number number
 	if write > 0
 		# Now here's the recursion:
 		hundreds = english_number write
-		num_string = num_string + hundreds + ' hundred' 
-		
+		num_string = num_string + hundreds + ' hundred'
+
 		if left > 0
     		#  So we don't write 'two hundredfifty-one'...
     		num_string = num_string + ' '
-		end 
+		end
 	end
 
 	write = left/10 # How many tens left?
@@ -439,27 +439,27 @@ def english_number number
 			# The "-1" is because teenagers[3] is
 			# 'fourteen', not 'thirteen'.
 			# Since we took care of the digit in the
-			# ones place already, we have nothing left to write. 
+			# ones place already, we have nothing left to write.
 			left = 0
 		else
     		num_string = num_string + tens_place[write-1]
     		#  The "-1" is because tens_place[3] is
-			# 'forty', not 'thirty'. 
+			# 'forty', not 'thirty'.
 		end
 
 		if left > 0
-		# So we don't write 'sixtyfour'... 
+		# So we don't write 'sixtyfour'...
 			num_string = num_string + '-'
 	 	end
 	end
 
-	write = left # How many ones left to write out? 
+	write = left # How many ones left to write out?
 	left = 0 # Subtract off those ones.
 		if write > 0
 			num_string = num_string + ones_place[write-1] # The "-1" is because ones_place[3] is
 			# 'four', not 'three'.
 		end
-  
+
   	#  Now we just return "num_string"...
 	num_string
 end
