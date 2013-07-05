@@ -1,9 +1,10 @@
 # Preston Copeland
-# July 4, 2013
+# July 4/5, 2013
 # Tealeaf course 1
 
 # Expanded English Number from Chris Pine's 'How to Program,' ch. 10
-# TODO still not expanded! Haha I'm working on it
+# Finally got it! Yeah!!
+
 
 def english_number number
   if number < 0 # No negative numbers.
@@ -26,17 +27,23 @@ def english_number number
               'fourteen',  'fifteen',  'sixteen',
               'seventeen', 'eighteen', 'nineteen']
 
-  left = number
-  write = left/100 # How many hundreds left?
-  left = left - write*100 # Subtract off those hundreds.
+  power_of_ten = [1_000_000_000_000, 1_000_000_000,
+                  1_000_000, 1_000, 100]
+  higher_names = ['trillion', 'billion', 'million',
+                  'thousand', 'hundred']
 
-  if write > 0
-    # Now here's the recursion:
-    hundreds = english_number write
-    num_string = num_string + hundreds + ' hundred'
-    if left > 0
-      #  So we don't write 'two hundredfifty-one'...
-      num_string = num_string + ' '
+  left = number
+
+  (0...5).each do |idx|
+    write = left/power_of_ten[idx] #how many of that place left?
+    left = left - write*power_of_ten[idx] #subtract them off
+
+    if write>0
+      place = english_number write
+      num_string = num_string + place + ' ' + higher_names[idx]
+      if left>0
+        num_string = num_string + ' '
+      end
     end
   end
 
