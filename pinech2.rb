@@ -1,7 +1,7 @@
 #Chris Pine: Learn to Program
 #Chapter 2 exercises
 #June 26, 2013
-=begin
+
 #How many hours in a year?
 
 hrs_in_yr = 24*365
@@ -199,7 +199,7 @@ def isLeapYear?(year)
 	false
 end
 
-=end
+
 
 #8.3 Arrays
 #June 28, 2013
