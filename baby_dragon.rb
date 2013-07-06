@@ -32,6 +32,8 @@ while true
   when "put to bed" then baby.put_to_bed
   when "rock" then baby.rock
   when "toss" then baby.toss
+  else puts "Sorry, there's an error!"
+  end
 
 end
 
